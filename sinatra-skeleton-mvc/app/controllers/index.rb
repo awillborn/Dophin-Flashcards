@@ -3,4 +3,3 @@ get '/' do
 end
 
 
-get ''
