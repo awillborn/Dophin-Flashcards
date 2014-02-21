@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Are you sure you want to logout?</h3>
+  <form action="/logout" method="post">
+      <input type="submit" name="logout" value="Log Out"> <!-- what does name need to be? -->
+  </form>
+
+  <form action="/users/<%= @user[:id] %>" method="get"> <!-- where is this directing? back to user home page? -->
+      <input type="submit" name="submit" value="No, go back">
+  </form>
+</div>
