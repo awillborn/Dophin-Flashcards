@@ -1,4 +1,4 @@
-#display form with card question and text area to type answer
+<!-- #display form with card question and text area to type answer
 #button to submit
 #this is post form, where it is checked against the answer in the database
 
@@ -7,3 +7,20 @@
 # the _answer_eval partial displaying either "Correct" or "Incorrect"
 
 #another form with submit button to click to next card, which redirects to new show_card page OR redirects to stats page when round is finished
+ -->
+<div class="container">
+  <form action="" method="post">
+    <input type="text" name="prompt" value="<%= @card.question %>"> <!-- #need value variable  -->
+    <input type="submit" name="submit" value="Submit Answer">
+  </form>
+
+  <% if @answer_eval %> <!-- What is this variable called? -->
+    <%= erb :answer_eval %>
+  <% end %>
+
+  <form action="" method="get">
+    <input type="submit" name="submit" value="Next Card">
+  </form>
+
+</div>
+
