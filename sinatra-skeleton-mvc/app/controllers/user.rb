@@ -1,31 +1,36 @@
+get '/users/new' do
+  erb :signup
+end
+
+post '/users'
+  User.create params
+  redirect '/decks'
+end
+
 get '/user' do
 
 end
 
 
-get '/login' do
+get '/users/login' do
   erb :login
 end
 
-post 'login' do
-  #password authentication
-  #set up sesssion
-  redirect '/decks'
+post '/login' do
+  if auth_user(params)
+    @urls = Url.all
+    redirect '/decks'
+  else
+    redirect to '/'
+  end
+
 end
 
-get 'signup' do
-  erb :signup
-end
-
-post '/signup'
-  User.create params
-  redirect '/decks'
-end
-
-post 'logout' do
+post '/logout' do
   session.clear
   redirect '/'
 end
 
-
-
+get '/delete_account' do
+  User.delete(session[:id])
+end
