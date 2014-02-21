@@ -2,7 +2,7 @@ get '/users/new' do
   erb :signup
 end
 
-post '/signup'
+post '/users'
   User.create params
   redirect '/decks'
 end
@@ -12,7 +12,7 @@ get '/user' do
 end
 
 
-get '/login' do
+get '/users/login' do
   erb :login
 end
 
