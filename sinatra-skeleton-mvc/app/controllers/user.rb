@@ -19,7 +19,6 @@ end
 
 post '/login' do
   if auth_user(params)
-    # @urls = Url.all
     redirect '/user/:id'
   else
     redirect to '/'
@@ -32,6 +31,11 @@ post '/logout' do
   redirect '/'
 end
 
+
 get '/delete_account' do
+  erb :confirm_delete
+end
+
+post '/delete_account' do
   User.delete(session[:id])
 end
