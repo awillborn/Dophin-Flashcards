@@ -17,9 +17,13 @@ get '/login' do
 end
 
 post '/login' do
-  #password authentication
-  #set up sesssion
-  redirect '/decks'
+  if auth_user(params)
+    @urls = Url.all
+    redirect '/decks'
+  else
+    redirect to '/'
+  end
+
 end
 
 post '/logout' do
