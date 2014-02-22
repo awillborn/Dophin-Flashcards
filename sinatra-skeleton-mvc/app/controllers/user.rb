@@ -1,5 +1,5 @@
 get '/users/new' do
-  erb :signup
+  erb :create_user
 end
 
 post '/users' do
@@ -14,14 +14,15 @@ end
 
 get '/users/stats/' do
   p params
-  @user = User.first
+  @user = User.find(session[:id])
   @deck = Deck.find(params[:deck_id].to_i)
   erb :show_stats
 end
 
 post '/login' do
+  p params
   if auth_user(params)
-    @urls = Url.all
+    # @urls = Url.all
     redirect '/decks'
   else
     redirect to '/'

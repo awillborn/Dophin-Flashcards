@@ -1,4 +1,0 @@
-get '/card' do
-
-end
-
