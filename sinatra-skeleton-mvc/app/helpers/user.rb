@@ -6,9 +6,13 @@ def loggedin?
 end
 
 def auth_user(params)
-  @user = User.find_by_username(params[:user_name])
+  @user = User.find_by_username(params[:username])
+  p @user && @user.password == params[:password]
   if @user && @user.password == params[:password]
-      session["id"] = @user.id
+      session[:id] = @user.id
+      true
+    else
+    false
   end
 end
 
