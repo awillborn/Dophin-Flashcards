@@ -1,18 +1,18 @@
  body {
   background-color: #DEBC8E;
   font-family: 'Goudy Bookletter 1911', serif;
+  width: 100%;
 }
 
 .container {
 
-  border: 2px solid #483C63;
-  border-radius: 8px;
+  border-top: 20px solid #D9CDCD;
+  border-bottom: 20px solid #D9CDCD;
   margin: 20px auto;
-  padding: 0px 20px 20px 20px;
+  padding: 0px 20px 150px 20px;
   position: relative;
   top: 100px;
-  width: 800px;
-  height: 400px;
+  width: 100%;
 
 }
 
@@ -27,6 +27,67 @@ form {
   margin: 0 auto;
 }
 
-.choose_deck{
+a, p {
+  display: block;
+  line-height: 100px;
+  margin: 0px 15px 15px 15px;
+  text-decoration: none;
+}
+a {
+  background-color: white;
+  border-radius: 100px;
   display: inline-block;
+  height:100px;
+  margin: 15px;
+  text-align: center;
+  width: 100px;
+}
+
+
+.cool_button {
+  background-color:#bababa;
+  -moz-border-radius:7px;
+  -webkit-border-radius:7px;
+  border-radius:7px;
+  border:3px solid #dbdbdb;
+  display:inline;
+  cursor:pointer;
+  color:#121111;
+  font-family:Times New Roman;
+  font-size:19px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #a6a6a6;
+  width: 150px;
+}
+.cool_button:hover {
+  background-color:#dedede;
+}
+.cool_button:active {
+  position:relative;
+  top:1px;
+}
+
+.fixed_nav {
+  position: fixed;
+  top: 0;
+}
+
+#home {
+  background-color: #260000;
+  color: white;
+  float: left;
+  font-size: 30px;
+  margin: 20px;
+}
+
+#right_header {
+  background-color: #260000;
+  color: white;
+  float: right;
+  font-size: 30px;
+  margin: 20px;
 }

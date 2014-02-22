@@ -8,7 +8,6 @@
 
 #another form with submit button to click to next card, which redirects to new show_card page OR redirects to stats page when round is finished
  -->
-<div class="container">
 
   <% unless @answer_eval.nil? %>
     <%= erb :_answer_eval %>
@@ -17,13 +16,12 @@
   <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
     question: <%= @card.question %><br>
     <input type="text" name="answer">
-    <input type="submit" value="Submit Answer">
+    <input type="submit" class="cool_button" value="Submit Answer">
   </form>
 
 
   <form action="#" method="get"> <!-- needs looking into -->
-    <input type="submit" value="Next Card">
+    <input type="submit" class="cool_button" value="Next Card">
   </form>
 
-</div>
 

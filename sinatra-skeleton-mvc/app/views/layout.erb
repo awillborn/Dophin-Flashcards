@@ -19,8 +19,11 @@
   <title></title>
 </head>
 <body>
-  <a href="/">Home</a> <!-- add conditional to check if the user is logged in -->
-  <%= yield %>
-  <%= erb :logout_button %>
+    <a id='home' href="/decks"><%= loggedin? ? "home" : "dophin"  %> </a>
+    <a id='right_header' href="<%= header_url %>"><%= header_text %> </a>
+
+    <div class="container">
+      <%= yield %>
+    </div>
 </body>
 </html>

@@ -2,10 +2,8 @@
 
 #Stretch: maybe stats about previous rounds -->
 
-<div class="container">
 
   <% @decks.each do |deck| %>
-  <a href="/decks/<%= deck.id %>"><%= deck.name %></a>
+    <a href="/decks/<%= deck.id %>"><p><%= deck.name %></p></a>
   <% end %>
 
-</div>
