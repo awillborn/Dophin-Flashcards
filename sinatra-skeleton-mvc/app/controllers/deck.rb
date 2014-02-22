@@ -4,14 +4,18 @@ get '/decks' do
 end
 
 get '/decks/:id' do
-  @cards = Card.all
-  # @cards = Card.all.find_by_deck_id(params[:id])
-  #need to add a session to prevent infinite loop
+  session[:cards] = Card.find_all_by_deck_id(params[:id]).shuffle
+  @card = session[:cards].pop
   erb :show_card
 end
 
-# post '/decks/:id' do
-#   #check if answer was right or wrong.
-#   #pop session[:cards] until session is empty, then redirect to statitics page
-#   erb :show_card
-# end
+post '/decks/:deck_id/cards/:card_id' do
+  @card = session[:cards].pop
+  if @card.nil?
+    session.delete(:cards)
+    redirect to("/users/stats/?deck_id=#{params[:deck_id]}")
+  else
+    @answer_eval = (params[:answer] == @card.answer)
+    erb :show_card
+  end
+end

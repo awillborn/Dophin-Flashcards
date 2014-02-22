@@ -12,6 +12,13 @@ get '/users/login' do
   erb :login
 end
 
+get '/users/stats/' do
+  p params
+  @user = User.first
+  @deck = Deck.find(params[:deck_id].to_i)
+  erb :show_stats
+end
+
 post '/login' do
   if auth_user(params)
     @urls = Url.all

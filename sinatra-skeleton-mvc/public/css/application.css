@@ -1,4 +1,4 @@
-body {
+ body {
   background-color: #DEBC8E;
   font-family: 'Goudy Bookletter 1911', serif;
 }
@@ -25,4 +25,8 @@ body {
 
 form {
   margin: 0 auto;
+}
+
+.choose_deck{
+  display: inline-block;
 }
