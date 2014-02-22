@@ -10,12 +10,12 @@ get '/decks/:id' do
 end
 
 post '/decks/:deck_id/cards/:card_id' do
-  #check if answer was right or wrong.
-  p params
   @card = session[:cards].pop
   if @card.nil?
+    session.delete(:cards)
     redirect to("/users/stats/?deck_id=#{params[:deck_id]}")
   else
+    @answer_eval = (params[:answer] == @card.answer)
     erb :show_card
   end
 end

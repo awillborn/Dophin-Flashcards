@@ -10,9 +10,9 @@
  -->
 <div class="container">
 
-  <%# <% if @answer_eval %>
-    <%# erb :answer_eval %>
-  <%# end %>
+  <% unless @answer_eval.nil? %>
+    <%= erb :_answer_eval %>
+  <% end %>
 
   <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
     question: <%= @card.question %><br>

@@ -14,7 +14,7 @@ end
 
 get '/users/stats/' do
   p params
-  @user = session[:id]
+  @user = User.first
   @deck = Deck.find(params[:deck_id].to_i)
   erb :show_stats
 end
