@@ -10,8 +10,8 @@ describe "Deck controller" do
 
   describe "answering a question" do
     before(:each) do
-      session[:cards] = Deck.find(1).cards
-      post '/decks/1/cards/1', answer: "Au"
+      cards = Deck.find(1).cards
+      post '/decks/1/cards/1', {answer: "Au"}, 'rack.session' => {cards: cards}
     end
 
     it "should be ok" do
@@ -19,7 +19,7 @@ describe "Deck controller" do
     end
 
     it "should return correct if answer is correct" do
-      expect(@answer_eval).to eq("Correct")
+      expect(last_response.body).to include("Correct")
     end
   end
 end
