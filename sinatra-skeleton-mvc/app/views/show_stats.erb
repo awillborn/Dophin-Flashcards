@@ -1,3 +1,17 @@
-#Shows number correct/incorrect for round just completed. Percent correct, etc.
+<!-- #Shows number correct/incorrect for round just completed. Percent correct, etc.
 #Button to go back to user page so they can select another deck
-#Button to redo same deck
+#Button to redo same deck -->
+
+<div class="container">
+
+  <p>Percent Correct: <%= @percent_correct %></p>
+
+  <form action="/users/<%= @user.id %>" method="get">
+    <input type="submit" name="home" value="New Deck">
+  </form>
+
+  <form action="/users/<%= @user.id %>/decks/<%= @deck.id %>" method="get">
+    <input type="submit" name="repeat" value="Repeat Deck">
+  </form>
+
+</div>

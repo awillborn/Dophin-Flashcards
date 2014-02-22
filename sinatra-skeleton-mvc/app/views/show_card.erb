@@ -9,14 +9,16 @@
 #another form with submit button to click to next card, which redirects to new show_card page OR redirects to stats page when round is finished
  -->
 <div class="container">
-  <form action="" method="post">
-    <input type="text" name="prompt" value="<%= @card.question %>"> <!-- #need value variable  -->
-    <input type="submit" name="submit" value="Submit Answer">
-  </form>
 
   <% if @answer_eval %> <!-- What is this variable called? -->
     <%= erb :answer_eval %>
   <% end %>
+
+  <form action="/user/:id" method="post">
+    <input type="text" name="prompt" value="<%= @card.question %>"> <!-- #need value variable  -->
+    <input type="submit" name="submit" value="Submit Answer">
+  </form>
+
 
   <form action="" method="get">
     <input type="submit" name="submit" value="Next Card">
