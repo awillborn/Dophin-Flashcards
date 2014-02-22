@@ -5,6 +5,7 @@ end
 get '/users/:id' do
   if loggedin?
     @decks = Decks.all
+    @user = User.find(params[:id])
     erb :show_user
   else
     @bad_login = true
@@ -18,7 +19,7 @@ end
 
 post '/users'
   User.create params
-  redirect '/user/:id'
+  redirect '/users/#{session[:id]}'
 end
 
 get '/users/login' do
@@ -27,7 +28,7 @@ end
 
 
 get '/users/:id/delete_account' do
-  if loggedin?
+  if loggedin? #might be unecessary given ealrier
   erb :confirm_delete
 end
 
@@ -48,6 +49,10 @@ end
 post '/logout' do
   session.clear
   redirect '/'
+end
+
+get '/users/highscores' do
+  @rounds = Round.find(:all, :order => "correct_answers DESC", :limit =>5)
 end
 
 
