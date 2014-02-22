@@ -14,14 +14,14 @@
     <%# erb :answer_eval %>
   <%# end %>
 
-  <form action="/decks/:id" method="get">
-    question: <%= @cards.sample.question %><br>
-    <input type="text" name="prompt"> <!-- #need value variable  -->
+  <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
+    question: <%= @card.question %><br>
+    <input type="text" name="answer"> <!-- #need value variable  -->
     <input type="submit" name="submit" value="Submit Answer">
   </form>
 
 
-  <form action="" method="get">
+  <form action="#" method="get"> <!-- needs looking into -->
     <input type="submit" name="submit" value="Next Card">
   </form>
 
