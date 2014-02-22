@@ -22,7 +22,6 @@ end
 post '/login' do
   p params
   if auth_user(params)
-    # @urls = Url.all
     redirect '/decks'
   else
     redirect to '/'

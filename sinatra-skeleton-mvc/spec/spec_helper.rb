@@ -1,4 +1,6 @@
 require 'rubygems'
+require 'factory_girl'
+require 'database_cleaner'
 
 # All our specs should require 'spec_helper' (this file)
 
@@ -13,8 +15,38 @@ require 'rack/test'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include FactoryGirl::Syntax::Methods
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+  config.before(:all) do
+    DatabaseCleaner.start
+  end
+  config.after(:all) do
+    DatabaseCleaner.clean
+  end
 end
 
 def app
   Sinatra::Application
+end
+
+FactoryGirl.define do
+  factory :user do
+    username "Phil Murray"
+    password "password"
+  end
+
+  factory :deck do
+    name "Heisenberg"
+    topic "Chemistry"
+  end
+
+  factory :card do
+    question "What is the atomic symbol for Gold"
+    answer "Au"
+    deck_id 1
+  end
 end

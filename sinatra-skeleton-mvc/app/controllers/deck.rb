@@ -5,7 +5,7 @@ end
 
 get '/decks/:id' do
   p params
-  session[:cards] = Card.find_all_by_deck_id(params[:id]).shuffle
+  session[:cards] = Deck.find(params[:id]).cards.shuffle
   @card = session[:cards].pop
   erb :show_card
 end
