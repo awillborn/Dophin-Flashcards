@@ -23,4 +23,8 @@ CARDS.each do |attribs|
   Card.create(attribs)
 end
 
+ROUND = [{deck_id: 2, user_id: 1, number_correct: 8, number_wrong: 2}]
 
+ROUND.each do |attribs|
+  Round.create(attribs)
+end
