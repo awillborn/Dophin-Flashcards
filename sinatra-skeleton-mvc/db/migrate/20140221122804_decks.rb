@@ -4,4 +4,5 @@ class Decks < ActiveRecord::Migration
       t.string :name
       t.string :topic
     end
+  end
 end
