@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Index" do
+describe "index", :type => :controller do
 
   before(:all) do
     FactoryGirl.create(:card)
@@ -13,9 +13,9 @@ describe "Index" do
   describe "redirect logic" do
 
     it "should redirect if the user is logged in" do
-      session[:id] = 1
-      get '/'
-      p last_response
+      #use this format to access a session using rspec
+      get '/', {}, 'rack.session' => {id: 1}
+      expect(last_response.status).to eq(302)
     end
 
     it "should keep the user on the login page if not logged in" do
