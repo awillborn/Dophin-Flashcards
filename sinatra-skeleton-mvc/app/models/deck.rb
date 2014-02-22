@@ -2,6 +2,6 @@ class Deck < ActiveRecord::Base
 
   has_many :cards
   has_many :rounds
-  belongs_to :users, through: :rounds
+  has_many :users, through: :rounds
 
 end

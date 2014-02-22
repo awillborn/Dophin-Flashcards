@@ -10,12 +10,13 @@
  -->
 <div class="container">
 
-  <% if @answer_eval %> <!-- What is this variable called? -->
-    <%= erb :answer_eval %>
-  <% end %>
+  <%# <% if @answer_eval %>
+    <%# erb :answer_eval %>
+  <%# end %>
 
-  <form action="/user/:id" method="post">
-    <input type="text" name="prompt" value="<%= @card.question %>"> <!-- #need value variable  -->
+  <form action="/decks/:id" method="get">
+    question: <%= @cards.sample.question %><br>
+    <input type="text" name="prompt"> <!-- #need value variable  -->
     <input type="submit" name="submit" value="Submit Answer">
   </form>
 
