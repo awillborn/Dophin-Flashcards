@@ -4,7 +4,7 @@
 
 <div class="container">
 
-  <p>Percent Correct: <%= @percent_correct %></p>
+  <p>Percent Correct: ##show card percent## <%# @percent_correct %></p>
 
   <form action="/users/<%= @user.id %>" method="get">
     <input type="submit" name="home" value="New Deck">

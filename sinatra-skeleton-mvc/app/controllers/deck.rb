@@ -9,11 +9,12 @@ get '/decks/:id' do
   erb :show_card
 end
 
-post '/decks/:deck_id/cards/:id' do
+post '/decks/:deck_id/cards/:card_id' do
   #check if answer was right or wrong.
+  p params
   @card = session[:cards].pop
   if @card.nil?
-    #redirect to record
+    redirect to("/users/stats/?deck_id=#{params[:deck_id]}")
   else
     erb :show_card
   end
