@@ -9,3 +9,4 @@ describe "UserController" do
     end
   end
 end
+
