@@ -1,4 +1,26 @@
-BANDNAMES = [ "Joy Division", "New Order", "The Smiths", "The Sisters of Mercy", "Wye Oak", "Thao and the Get Down Stay Down",
-          "Siouxsie and the Banshees", "Interpol" ]
+DECKNAMES = ["Deck 1", "Deck 2"]
+DECKTOPICS = ["Spanish Level 1", "Spanish Level 2"]
 
-BANDNAMES.each{ |band_name| Band.create(name: band_name) }
+
+
+DECKNAMES.each_with_index{ |name, index| Deck.create(name: DECKNAMES[index], topic: DECKTOPICS[index]) }
+
+USERS = [{username: "user1", password: "pass123"}, {username: "user2", password: "pass123"}]
+
+USERS.each do |attribs|
+  User.create(attribs)
+end
+
+
+CARDS = [{question: "hello", answer: "hola", deck_id: 1},
+          {question: "bye", answer: "adios", deck_id: 1},
+          {question: "please", answer: "por favor", deck_id: 1},
+          {question: "how are you?", answer: "como estas?", deck_id: 2},
+          {question: "good morning", answer: "buenos dias", deck_id: 2},
+          {question: "hello, beautiful", answer: "hola, bonita", deck_id: 2}]
+
+CARDS.each do |attribs|
+  Card.create(attribs)
+end
+
+
