@@ -2,9 +2,10 @@
 #Button to go back to user page so they can select another deck
 #Button to redo same deck -->
 
-<p>Percent Correct: ##show card percent## <%# @percent_correct %></p>
+<p>Number Correct: <%= Round.last.number_correct %></p>
+<p>Number Wrong: <%= Round.last.number_wrong %></p>
 <form action="/decks" method="get" class="choose_deck">
-  <input type="submit" name="home" value="New Deck">
+  <input type="submit" class="cool_button" name="home" value="New Deck">
 </form>
 
 <form action="/decks/<%= @deck.id %>" method="get" class="choose_deck">
