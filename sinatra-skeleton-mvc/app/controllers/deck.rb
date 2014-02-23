@@ -26,7 +26,6 @@ post '/decks/:deck_id/cards/:card_id' do
     assign_score(@answer_eval)
     erb :show_card
   end
-<<<<<<< HEAD
 end
 
 get '/decks/:deck_id/cards/:card_id' do
@@ -39,6 +38,3 @@ get '/decks/:deck_id/cards/:card_id' do
     erb :show_card
   end
 end
-=======
-end
->>>>>>> master
