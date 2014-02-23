@@ -3,7 +3,8 @@ get '/users/new' do
 end
 
 post '/users' do
-  User.create params
+  new_user = User.create params
+  session[:id] = new_user.id
   redirect '/decks'
 end
 
