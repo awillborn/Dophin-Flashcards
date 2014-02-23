@@ -4,13 +4,16 @@ describe "User controller" do
   before(:all) do
     FactoryGirl.create(:card)
     FactoryGirl.create(:deck)
-    FactoryGirl.create(:user)
   end
   let(:attribs){FactoryGirl.attributes_for(:user)}
 
   describe "creating a User" do
     it "should increase the user count" do
       expect{post '/users', attribs}.to change{User.count}.by(1)
+    end
+
+    it "should not increase the user count if using a taken username" do
+    expect{post '/users', attribs}.not_to change{User.count}
     end
   end
 
