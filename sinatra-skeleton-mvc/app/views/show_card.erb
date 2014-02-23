@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- #display form with card question and text area to type answer
 #button to submit
 #this is post form, where it is checked against the answer in the database
@@ -23,5 +24,20 @@
   <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="get">
     <input type="submit" class="cool_button" value="Next Card">
   </form>
+=======
+<% unless @answer_eval.nil? %>
+  <%= erb :_answer_eval %>
+<% end %>
+
+<form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
+  Question: <%= @card.question %><br>
+  <input type="text" name="answer">
+  <input type="submit" class="cool_button" value="Submit Answer">
+</form>
+
+<form action="#" method="get"> <!-- needs looking into -->
+  <input type="submit" class="cool_button" value="Next Card">
+</form>
+>>>>>>> master
 
 
