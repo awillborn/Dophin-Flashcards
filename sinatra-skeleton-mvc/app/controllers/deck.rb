@@ -1,5 +1,6 @@
 get '/decks' do
   @decks = Deck.all
+  @rounds = Round.where(user_id: session[:id])
   erb :show_decks
 end
 
