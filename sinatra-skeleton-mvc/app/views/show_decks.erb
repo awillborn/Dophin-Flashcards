@@ -1,9 +1,3 @@
-<!-- #MVP: list of decks with links. When you click, you start playing a round by showing a card.
-
-#Stretch: maybe stats about previous rounds -->
-
-
-  <% @decks.each do |deck| %>
-    <a href="/decks/<%= deck.id %>"><p><%= deck.name %></p></a>
-  <% end %>
-
+<% @decks.each do |deck| %>
+  <a href="/decks/<%= deck.id %>"><p><%= deck.name %></p></a>
+<% end %>

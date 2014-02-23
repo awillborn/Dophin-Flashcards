@@ -4,14 +4,12 @@ get '/decks' do
 end
 
 get '/decks/:id' do
-  p params
-  session[:cards] = Card.find_all_by_deck_id(params[:id]).shuffle
+  session[:cards] = Deck.find(params[:id]).cards.shuffle
   @card = session[:cards].pop
   erb :show_card
 end
 
 post '/decks/:deck_id/cards/:card_id' do
-  p params
   @current_card = Card.find(params[:card_id])
   @card = session[:cards].pop
   if @card.nil?
