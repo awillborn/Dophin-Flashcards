@@ -35,3 +35,4 @@ end
 get '/delete_account' do
   User.delete(session[:id])
 end
+

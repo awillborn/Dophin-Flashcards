@@ -6,5 +6,8 @@
     <input type="submit" class="cool_button" name="submit" value="Login">
   </form>
 
+<% if @scores && @scores.length == 5 %>
+  <%= erb :high_scores %>
+<% end %>
 
 
