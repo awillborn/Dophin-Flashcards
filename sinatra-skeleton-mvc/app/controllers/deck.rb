@@ -5,8 +5,6 @@ end
 
 get '/decks/:id' do
   deck = Deck.find(params[:id])
-  #ISO FEEDBACK: is it better to one line the following logic, or to define
-  #user and call user.rounds.create(..)
   User.find(session[:id]).rounds.create(deck_id: deck.id)
   session[:cards] = deck.cards.shuffle
   @card = session[:cards].pop
@@ -20,7 +18,7 @@ post '/decks/:deck_id/cards/:card_id' do
     session.delete(:cards)
     @answer_eval = (params[:answer].downcase == @current_card.answer.downcase)
     assign_score(@answer_eval)
-    redirect to("/users/stats/?deck_id=#{params[:deck_id]}")
+    redirect to("/users/stats/#{params[:deck_id]}")
   else
     @answer_eval = (params[:answer].downcase == @current_card.answer.downcase)
     assign_score(@answer_eval)
@@ -33,7 +31,7 @@ get '/decks/:deck_id/cards/:card_id' do
   @card = session[:cards].pop
   if @card.nil?
     session.delete(:cards)
-    redirect to("/users/stats/?deck_id=#{params[:deck_id]}")
+    redirect to("/users/stats/#{params[:deck_id]}")
   else
     erb :show_card
   end
