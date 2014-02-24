@@ -11,7 +11,7 @@ Restful Dolphins Flashcards
 5. New User Register
 6. Arabic, French and Chemistry sample decks
 
-**Try on Heroku:** 
+**Try on Heroku:**  
 herokuhttp://obscure-wave-1778.herokuapp.com/
 
 
