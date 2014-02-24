@@ -1,5 +1,4 @@
-### Dolphin Flash Cards
-
+### Dolphin Flash Cards  
 Created by Chris, Phil, Anne, Armando, Jaime and Mason
 
 ### Features:
