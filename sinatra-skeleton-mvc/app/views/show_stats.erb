@@ -1,7 +1,3 @@
-<!-- #Shows number correct/incorrect for round just completed. Percent correct, etc.
-#Button to go back to user page so they can select another deck
-#Button to redo same deck -->
-
 <p>Number Correct: <%= Round.last.number_correct %></p>
 <p>Number Wrong: <%= Round.last.number_wrong %></p>
 <form action="/decks" method="get" class="choose_deck">
