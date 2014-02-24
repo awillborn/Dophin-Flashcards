@@ -1,4 +1,3 @@
-
 Restful Dolphins Flashcards
 ===========================
   
@@ -8,9 +7,9 @@ Restful Dolphins Flashcards
 1. Flash Cards Quiz
 2. Supports Multiple Decks
 3. Tracking of Number of Correct and Incorrect Guesses
-4. User Login
+4. User Login Authentication
 5. New User Register
-6. Choice of Decks
+6. Arabic, French and Chemistry sample decks
 
 
 **Trello at:**  
