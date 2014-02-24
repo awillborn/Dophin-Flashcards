@@ -1,4 +1,4 @@
- body {
+body {
   background-color: #DEBC8E;
   font-family: 'Goudy Bookletter 1911', serif;
   width: 100%;
@@ -12,35 +12,41 @@
   padding: 0px 20px 150px 20px;
   position: relative;
   top: 100px;
-  width: 80%;
+  height: 200px;
+  width: 100%;
 
 }
-
-#welcome {
-  position: relative;
-  top: 100px;
-  left: 100px;
-}
-
 
 form {
   margin: 0 auto;
 }
 
-a, p {
+.headers, p {
   display: block;
   line-height: 100px;
   margin: 0px 15px 15px 15px;
   text-decoration: none;
 }
-a {
-  background-color: white;
-  border-radius: 100px;
+
+.headers {
+  border-radius: 100px 100px 0 0;
   display: inline-block;
   height:100px;
   margin: 15px;
   text-align: center;
-  width: 100px;
+  width: 200px;
+}
+
+#welcome {
+  position: absolute;
+  left: 50px;
+  width: 500px;
+}
+
+#login_form {
+  position:absolute;
+  top: 100px;
+  left: 100px;
 }
 
 
@@ -76,6 +82,11 @@ a {
   top: 0;
 }
 
+#create_user {
+  position: absolute;
+  left: 150px;
+}
+
 #home {
   background-color: #260000;
   color: white;
@@ -91,3 +102,35 @@ a {
   font-size: 30px;
   margin: 20px;
 }
+
+ul {
+  list-style: none;
+  position: relative;
+  right: 150px;
+}
+
+ul li {
+  background-color: white;
+  border-radius: 25px;
+  height: 40px;
+  width: 250px;
+  list-style: none;
+  float: left;
+  margin: 10px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+.card {
+  position: absolute;
+  left: 150px;
+}
+
+.card h2 {
+  text-decoration: underline;
+}
+
