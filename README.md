@@ -12,7 +12,7 @@ Restful Dolphins Flashcards
 6. Arabic, French and Chemistry sample decks
 
 **Try on Heroku:**  
-herokuhttp://obscure-wave-1778.herokuapp.com/
+http://obscure-wave-1778.herokuapp.com/
 
 
 **Trello at:**  
