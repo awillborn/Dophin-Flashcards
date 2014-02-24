@@ -4,7 +4,7 @@
 
   <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
     question: <%= @card.question %><br>
-    <input type="text" name="answer">
+    <input type="text" name="answer" autocomplete="off">
     <input type="submit" class="cool_button" value="Submit Answer">
   </form>
 
