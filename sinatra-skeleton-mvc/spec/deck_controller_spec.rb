@@ -4,9 +4,10 @@ describe "Deck controller" do
 
   before(:all) do
     FactoryGirl.create(:card)
-    FactoryGirl.create(:deck)
-    FactoryGirl.create(:user)
+    first_user.decks << first_deck
   end
+  let(:first_deck){FactoryGirl.create(:deck)}
+  let(:first_user){FactoryGirl.create(:user)}
 
   describe "answering a question" do
     before(:each) do

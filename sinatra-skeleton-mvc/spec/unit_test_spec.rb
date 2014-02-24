@@ -6,7 +6,8 @@ describe User do
     FactoryGirl.create(:deck)
     FactoryGirl.create(:user)
   end
-
+  it { should have_many(:rounds)}
+  it { should have_many(:decks).through(:rounds)}
   it { should validate_presence_of(:username).with_message("Username cannot be left blank")}
   it { should validate_uniqueness_of(:username).with_message("That username is already taken")}
   it { should validate_presence_of(:password).with_message("Password cannot be left blank")}
