@@ -1,0 +1,20 @@
+<div class="card">
+  <% unless @answer_eval.nil? %>
+    <%= erb :_answer_eval %>
+  <% end %>
+
+  <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
+
+   <h4>Question: <%= @card.question %><span id="spacer"></span> 
+    <input type="text" name="answer" placeholder="Take a Guess!" autocomplete="off"></h4>
+    <input type="submit" class="card_button" value="Submit Answer">
+
+    <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="get">
+      <input type="submit" class="card_button" value="Next Card">
+    </form>
+
+    <form action="/users/stats/<%= @card.deck_id %>" method="get">
+        <input type="submit" class="card_button" value="Exit">
+    </form>
+  </form>
+</div>

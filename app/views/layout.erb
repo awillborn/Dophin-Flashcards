@@ -9,11 +9,11 @@
   <title></title>
 </head>
 <body>
-    <a class="headers" id='home' href="<%= header_home %>"><%= loggedin? ? "home" : "dophin"  %> </a>
-    <a class="headers" id='right_header' href="<%= header_url %>"><%= header_text %> </a>
+  <a class="headers" id='home' href="<%= header_home %>"><%= loggedin? ? "home" : "dophin"  %> </a>
+  <a class="headers" id='right_header' href="<%= header_url %>"><%= header_text %> </a>
 
-    <div class="container">
-      <%= yield %>
-    </div>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
