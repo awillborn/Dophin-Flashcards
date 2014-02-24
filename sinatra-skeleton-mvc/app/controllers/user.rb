@@ -5,7 +5,7 @@ end
 post '/users' do
   new_user = User.create params
   session[:id] = new_user.id
-  redirect '/decks' #post message, congrats on signing up! etc
+  redirect '/decks'
 end
 
 

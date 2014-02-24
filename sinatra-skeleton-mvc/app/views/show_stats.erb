@@ -9,11 +9,11 @@
   <h3>Number Correct: <%= Round.last.number_correct %></h3>
   <h3>Number Wrong: <%= Round.last.number_wrong %></h3>
   <form action="/decks" method="get" class="choose_deck">
-    <input type="submit" class="cool_button" name="home" value="New Deck">
+    <input type="submit" class="card_button" name="home" value="New Deck">
   </form>
 
   <form action="/decks/<%= @deck.id %>" method="get" class="choose_deck">
-    <input type="submit" class="cool_button" name="repeat" value="Repeat Deck">
+    <input type="submit" class="card_button" name="repeat" value="Repeat Deck">
   </form>
 
 </div>

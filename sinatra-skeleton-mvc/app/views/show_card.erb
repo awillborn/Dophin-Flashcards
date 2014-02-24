@@ -16,17 +16,16 @@
     <% end %>
 
   <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
-    <h3>Prompt: <%= @card.question %></h3><br>
-    <input type="text" name="answer"><br><br>
-    <input type="submit" class="cool_button" value="Submit Answer">
+
+   <h4>Question: <%= @card.question %><span id="spacer"></span> 
+    <input type="text" name="answer" placeholder="Take a Guess!" autocomplete="off"></h4>
+
+    <input type="submit" class="card_button" value="Submit Answer">
+
+    <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="get">
+      <input type="submit" class="card_button" value="Next Card">
+    </form>
   </form>
 
-
-  <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="get">
-    <input type="submit" class="cool_button" value="Next Card">
-  </form>
 
 </div>
-
-
-

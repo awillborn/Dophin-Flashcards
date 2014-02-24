@@ -1,5 +1,6 @@
-DECKNAMES = ["Arabic Numbers", "Arabic Greetings"]
-DECKTOPICS = ["Arabic Numbers", "Arabic Greetings"]
+DECKNAMES = ["Arabic Numbers", "Arabic Greetings", "Chemistry"]
+DECKTOPICS = ["Arabic Numbers", "Arabic Greetings", "Chemistry"]
+
 
 DECKNAMES.each_with_index{ |name, index| Deck.create(name: DECKNAMES[index], topic: DECKTOPICS[index]) }
 
@@ -15,7 +16,20 @@ CARDS = [{question: "واحد", answer: "one", deck_id: 1},
           {question: "ثلاثة", answer: "three", deck_id: 1},
           {question: "كيفك", answer: "how are you?", deck_id: 2},
           {question: "صباح الخير", answer: "good morning", deck_id: 2},
-          {question: "مرحبا", answer: "hello", deck_id: 2}]
+          {question: "مرحبا", answer: "hello", deck_id: 2}, 
+          {question:"What is the Caesium Chloride crystal structure? (abbreviation)", answer:"BCC", deck_id: 3},
+          {question:"What is the Sodium Chloride (rock salt) crystal structure?", answer:"Cubic", deck_id: 3},
+          {question:"What metal has the highest melting point?", answer:"Tungsten", deck_id: 3},
+          {question:"What is the latin root for Gold (atomic symbol Au)", answer:"Aurum", deck_id: 3},
+          {question:"What is Walter White's alter ego name", answer:"Heisenberg", deck_id: 3},
+          {question:"What is the heaviest, non-radioactive element", answer:"Bismuth", deck_id: 3},
+          {question:"What metal is the best conductor of electricity", answer:"Silver", deck_id: 3},
+          {question:"The TCA/Krebs cycle is also known as the..", answer:"Citric Acid Cycle", deck_id: 3},
+          {question:"ADP reacts with which coenzyme to produce ATP (abbreviation)", answer:"NADH", deck_id: 3},
+          {question:"What is the net production of ATP through glycolysis (number)", answer:"2", deck_id: 3},
+          {question:"What is the net production of ATP through the Krebs cycle (number)", answer:"36", deck_id: 3},
+          {question:"The product of glycolysis is which compound?", answer:"Pyruvate", deck_id: 3},
+          {question:"What is the metal at the center of a Heme compound?", answer:"Iron", deck_id: 3}]
 
 CARDS.each do |attribs|
   Card.create(attribs)

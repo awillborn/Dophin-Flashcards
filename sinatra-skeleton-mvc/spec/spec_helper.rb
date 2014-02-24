@@ -39,6 +39,13 @@ FactoryGirl.define do
     password "password"
   end
 
+  factory :round do
+    number_correct 0
+    number_wrong 0
+    user
+    deck
+  end
+
   factory :deck do
     name "Heisenberg"
     topic "Chemistry"

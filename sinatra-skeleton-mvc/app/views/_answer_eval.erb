@@ -1,5 +1,5 @@
 <% if @answer_eval %>
   <h3>Correct!</h3>
 <% else %>
-  <h3>Incorrect!</h3>
+  <h4><%= "Incorrect! The correct answer was #{@current_card.answer}" %></h4>
 <% end %>

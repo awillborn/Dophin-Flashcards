@@ -4,6 +4,11 @@ body {
   width: 100%;
 }
 
+h4 {
+  font-size: 25px;
+
+}
+
 .container {
 
   border-top: 20px solid #D9CDCD;
@@ -39,14 +44,23 @@ form {
 
 #welcome {
   position: absolute;
-  left: 50px;
+  margin: 20px 20px;
+  padding: 0;
+  text-align: left;
+  z-index: 1;
+}
+
+#welcome h1 {
+  margin: 20px 0px;
+  position: relative;
   width: 500px;
 }
 
 #login_form {
   position:absolute;
-  top: 100px;
-  left: 100px;
+  margin: 70px 40px;
+  width: 500px;
+  z-index: 1;
 }
 
 
@@ -59,16 +73,18 @@ form {
   display:inline;
   cursor:pointer;
   color:#121111;
-  font-family:Times New Roman;
   font-size:19px;
   height: 50px;
-  margin: 10px;
+  left: -20px;
+  margin: 10px 15px;
   padding: 10px 10px;
+  position: absolute;
   text-align: center;
   text-decoration:none;
   text-shadow:0px 1px 0px #a6a6a6;
-  width: 150px;
+  width: 180px;
 }
+
 .cool_button:hover {
   background-color:#dedede;
 }
@@ -83,8 +99,9 @@ form {
 }
 
 #create_user {
-  position: absolute;
-  left: 150px;
+  position: relative;
+  margin: 15px auto;
+  width: 500px;
 }
 
 #home {
@@ -105,32 +122,94 @@ form {
 
 ul {
   list-style: none;
-  position: relative;
-  right: 150px;
+  margin: 30px 10px auto;
+
 }
 
 ul li {
-  background-color: white;
+  background-color: #D9CDCD;
   border-radius: 25px;
   height: 40px;
-  width: 250px;
   list-style: none;
   float: left;
-  margin: 10px;
   font-size: 1.5em;
+  margin: 20px 10px auto;
+  padding: 20px;
   text-align: center;
+  width: 200px;
 }
 
 ul li a {
+  color: yellow;
   text-decoration: none;
 }
 
+ul li a:visited {
+  color: black;
+}
+
 .card {
-  position: absolute;
-  left: 150px;
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+/*  position: absolute;
+  left: 150px;*/
 }
 
 .card h2 {
   text-decoration: underline;
 }
 
+#spacer {
+  margin: 25px;
+}
+
+.card_button {
+  background-color:#bababa;
+  -moz-border-radius:7px;
+  -webkit-border-radius:7px;
+  border-radius:7px;
+  border:3px solid #dbdbdb;
+  display:inline;
+  cursor:pointer;
+  color:#121111;
+  font-size:19px;
+  height: 50px;
+  left: -20px;
+  margin: 10px 15px;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #a6a6a6;
+  width: 180px;
+}
+
+.card_button:hover {
+  background-color:#dedede;
+}
+.card_button:active {
+  position:relative;
+  top:1px;
+}
+
+#create_user {
+  position: absolute;
+  margin: 20px 20px;
+  padding: 0;
+  text-align: left;
+  z-index: 1;
+}
+
+#create_user h1 {
+  margin: 20px 0px;
+  position: relative;
+  width: 500px;
+}
+
+#signup_form {
+  position:absolute;
+  margin: 70px 40px;
+  width: 500px;
+  z-index: 1;
+}
