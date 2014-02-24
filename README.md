@@ -1,4 +1,4 @@
-Dolphins Flashcards
+Restful Dolphins Flashcards
 ===========================
 
 Created by Chris, Phil, Anne, Armando, Jaime and Mason
