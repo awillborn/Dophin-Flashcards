@@ -4,11 +4,11 @@ Dolphins Flashcards
 Created by Chris, Phil, Anne, Armando, Jaime and Mason
 
 ### Features:
-1. etc
-2. etc
-4. etc
-5. etc
-6. 
+1. Flash Card questions
+2. Tracking of Number of Correct and Incorrect Guesses
+4. User Login
+5. New User Register
+6. Choice of Decks
 
 **Trello at:**  
 https://trello.com/b/cU6Dl8uK/dolphin-restful-cards  
