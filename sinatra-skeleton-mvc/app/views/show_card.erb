@@ -1,31 +1,20 @@
-<!-- #display form with card question and text area to type answer
-#button to submit
-#this is post form, where it is checked against the answer in the database
-
-#Redirect to same show_card page with "correct" or "incorrect"
-# There will be some sort of variable (@answer) that is in the post logic of this form. If that variable exists, this show_card page will include
-# the _answer_eval partial displaying either "Correct" or "Incorrect"
-
-#another form with submit button to click to next card, which redirects to new show_card page OR redirects to stats page when round is finished
- -->
-
 <div class="card">
-
   <% unless @answer_eval.nil? %>
     <%= erb :_answer_eval %>
-    <% end %>
+  <% end %>
 
   <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="post">
 
    <h4>Question: <%= @card.question %><span id="spacer"></span> 
     <input type="text" name="answer" placeholder="Take a Guess!" autocomplete="off"></h4>
-
     <input type="submit" class="card_button" value="Submit Answer">
 
     <form action="/decks/<%= @card.deck_id %>/cards/<%= @card.id %>" method="get">
       <input type="submit" class="card_button" value="Next Card">
     </form>
+
+    <form action="/users/stats/<%= @card.deck_id %>" method="get">
+        <input type="submit" class="card_button" value="Exit">
+    </form>
   </form>
-
-
 </div>

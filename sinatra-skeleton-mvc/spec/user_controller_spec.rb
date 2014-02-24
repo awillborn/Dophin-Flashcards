@@ -1,10 +1,6 @@
 require 'spec_helper'
 
 describe "User controller" do
-  before(:all) do
-    FactoryGirl.create(:card)
-    FactoryGirl.create(:deck)
-  end
   let(:attribs){FactoryGirl.attributes_for(:user)}
 
   describe "creating a User" do

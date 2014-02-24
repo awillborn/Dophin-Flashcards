@@ -1,17 +1,12 @@
 require 'spec_helper'
 
-describe "index", :type => :controller do
+describe "Index", :type => :controller do
 
   before(:all) do
-    FactoryGirl.create(:card)
-    FactoryGirl.create(:deck)
     FactoryGirl.create(:user)
   end
 
-  let(:attribs) {FactoryGirl.attributes_for(:user)}
-
   describe "redirect logic" do
-
     it "should redirect if the user is logged in" do
       #use this format to access a session using rspec
       get '/', {}, 'rack.session' => {id: 1}

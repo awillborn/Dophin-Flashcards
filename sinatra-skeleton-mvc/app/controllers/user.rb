@@ -13,7 +13,8 @@ get '/users/login' do
   erb :login
 end
 
-get '/users/stats/' do
+get '/users/stats/:deck_id' do
+  p params
   @user = User.find(session[:id])
   @deck = Deck.find(params[:deck_id].to_i)
   erb :show_stats
