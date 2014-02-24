@@ -1,26 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
   <link rel="stylesheet" href="/css/application.css">
-
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
-
   <title></title>
 </head>
 <body>
-    <a id='home' href="<%= header_home %>"><%= loggedin? ? "home" : "dophin"  %> </a>
-    <a id='right_header' href="<%= header_url %>"><%= header_text %> </a>
+    <a class="headers" id='home' href="<%= header_home %>"><%= loggedin? ? "home" : "dophin"  %> </a>
+    <a class="headers" id='right_header' href="<%= header_url %>"><%= header_text %> </a>
 
     <div class="container">
       <%= yield %>

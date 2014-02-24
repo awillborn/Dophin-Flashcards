@@ -1,6 +1,5 @@
-DECKNAMES = ["Deck 1", "Deck 2", "Chemistry"]
-DECKTOPICS = ["Spanish Level 1", "Spanish Level 2", "Heisenberg"]
-
+DECKNAMES = ["Arabic Numbers", "Arabic Greetings", "Chemistry"]
+DECKTOPICS = ["Arabic Numbers", "Arabic Greetings", "Chemistry"]
 
 
 DECKNAMES.each_with_index{ |name, index| Deck.create(name: DECKNAMES[index], topic: DECKTOPICS[index]) }
@@ -12,12 +11,12 @@ USERS.each do |attribs|
 end
 
 
-CARDS = [{question: "hello", answer: "hola", deck_id: 1},
-          {question: "bye", answer: "adios", deck_id: 1},
-          {question: "please", answer: "por favor", deck_id: 1},
-          {question: "how are you?", answer: "como estas?", deck_id: 2},
-          {question: "good morning", answer: "buenos dias", deck_id: 2},
-          {question: "hello, beautiful", answer: "hola, bonita", deck_id: 2},
+CARDS = [{question: "واحد", answer: "one", deck_id: 1},
+          {question: "اثنين", answer: "two", deck_id: 1},
+          {question: "ثلاثة", answer: "three", deck_id: 1},
+          {question: "كيفك", answer: "how are you?", deck_id: 2},
+          {question: "صباح الخير", answer: "good morning", deck_id: 2},
+          {question: "مرحبا", answer: "hello", deck_id: 2}, 
           {question:"What is the Caesium Chloride crystal structure? (abbreviation)", answer:"BCC", deck_id: 3},
           {question:"What is the Sodium Chloride (rock salt) crystal structure?", answer:"Cubic", deck_id: 3},
           {question:"What metal has the highest melting point?", answer:"Tungsten", deck_id: 3},

@@ -1,9 +1,20 @@
-<p>Number Correct: <%= Round.last.number_correct %></p>
-<p>Number Wrong: <%= Round.last.number_wrong %></p>
-<form action="/decks" method="get" class="choose_deck">
-  <input type="submit" class="cool_button" name="home" value="New Deck">
-</form>
+<!-- #Shows number correct/incorrect for round just completed. Percent correct, etc.
+#Button to go back to user page so they can select another deck
+#Button to redo same deck -->
 
-<form action="/decks/<%= @deck.id %>" method="get" class="choose_deck">
-  <input type="submit" class="cool_button" name="repeat" value="Repeat Deck">
-</form>
+<div class="card">
+
+  <h2>Round Stats</h2>
+
+  <h3>Number Correct: <%= Round.last.number_correct %></h3>
+  <h3>Number Wrong: <%= Round.last.number_wrong %></h3>
+  <form action="/decks" method="get" class="choose_deck">
+    <input type="submit" class="card_button" name="home" value="New Deck">
+  </form>
+
+  <form action="/decks/<%= @deck.id %>" method="get" class="choose_deck">
+    <input type="submit" class="card_button" name="repeat" value="Repeat Deck">
+  </form>
+
+</div>
+
