@@ -1,5 +1,5 @@
 get '/users/new' do
-  erb :create_user
+  erb :create_user, layout: false
 end
 
 post '/users' do
@@ -8,7 +8,7 @@ post '/users' do
     session[:id] = @user.id
     redirect '/decks'
   else
-    erb :create_user
+    erb :create_user, layout: false
   end
 end
 
@@ -20,7 +20,7 @@ end
 get '/users/stats/:deck_id' do
   @user = User.find(session[:id])
   @deck = Deck.find(params[:deck_id].to_i)
-  erb :show_stats
+  erb :show_stats, layout: false
 end
 
 post '/login' do
@@ -30,7 +30,7 @@ post '/login' do
     redirect '/decks'
   else
     @failed_loggin = true
-    erb :index
+    erb :index, layout: false
   end
 end
 

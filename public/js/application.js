@@ -20,4 +20,31 @@ $(document).ready(function() {
     })
   })
 
-});
+    $(document).on("submit","form",function(event){
+      event.preventDefault();
+      $.ajax({
+        type: "POST",
+        url: this.attributes.action.nodeValue,
+        data: $('form').serialize(),
+        success: function(response){
+          $('.container').html(response)
+          console.log(response)
+        }
+      })
+  });
+})
+
+// debugger;
+//     event.preventDefault();
+//     var selectedDeck = $(this);
+//     var deckId = selectedDeck.data('id');
+//     console.log(deckId);
+//     $.ajax({
+//       type: "POST",
+//       url: "/decks/1/cards/1",
+//       success: function(response){
+//         // $('.container').html(response)
+//         console.log(response)
+//       }
+//     })
+//   })
