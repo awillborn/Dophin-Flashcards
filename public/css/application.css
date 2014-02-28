@@ -140,7 +140,7 @@ ul li {
 }
 
 ul li a {
-  color: yellow;
+  color: black;
   text-decoration: none;
 }
 
@@ -212,4 +212,11 @@ ul li a:visited {
   margin: 70px 40px;
   width: 500px;
   z-index: 1;
+}
+
+.error-msg{
+  border-radius: 5px;
+  width:40%;
+  text-align: center;
+  background-color: rgb(250, 149, 149);
 }

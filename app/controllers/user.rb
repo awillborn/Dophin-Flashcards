@@ -3,9 +3,13 @@ get '/users/new' do
 end
 
 post '/users' do
-  new_user = User.create params
-  session[:id] = new_user.id
-  redirect '/decks'
+  @user = User.create params
+  if @user.valid?
+    session[:id] = new_user.id
+    redirect '/decks'
+  else
+    erb :create_user
+  end
 end
 
 
@@ -14,17 +18,19 @@ get '/users/login' do
 end
 
 get '/users/stats/:deck_id' do
-  p params
   @user = User.find(session[:id])
   @deck = Deck.find(params[:deck_id].to_i)
   erb :show_stats
 end
 
 post '/login' do
-  if auth_user(params)
+  auth_user(params)
+  p params
+  if loggedin?
     redirect '/decks'
   else
-    redirect to '/'
+    @failed_loggin = true
+    erb :index
   end
 end
 

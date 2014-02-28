@@ -2,12 +2,12 @@ require 'spec_helper'
 
 describe "Deck controller" do
 
+  let(:first_deck){FactoryGirl.create(:deck)}
+  let(:first_user){FactoryGirl.create(:user)}
   before(:all) do
     FactoryGirl.create(:card)
     first_user.decks << first_deck
   end
-  let(:first_deck){FactoryGirl.create(:deck)}
-  let(:first_user){FactoryGirl.create(:user)}
 
   describe "answering a question correctly" do
     before(:each) do
