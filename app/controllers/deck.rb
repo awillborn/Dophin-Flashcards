@@ -8,7 +8,7 @@ get '/decks/:id' do
   User.find(session[:id]).rounds.create(deck_id: deck.id)
   session[:cards] = deck.cards.shuffle
   @card = session[:cards].pop
-  erb :show_card
+  erb :show_card, layout: false
 end
 
 post '/decks/:deck_id/cards/:card_id' do

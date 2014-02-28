@@ -4,4 +4,20 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+
+  $(".choose-deck").on("click",function(event){
+    event.preventDefault();
+    var selectedDeck = $(this);
+    var deckId = selectedDeck.data('id');
+    console.log(deckId);
+    $.ajax({
+      type: "GET",
+      url: "/decks/"+deckId,
+      success: function(response){
+        $('.container').html(response)
+        console.log("win")
+      }
+    })
+  })
+
 });

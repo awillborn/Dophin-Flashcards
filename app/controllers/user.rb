@@ -5,7 +5,7 @@ end
 post '/users' do
   @user = User.create params
   if @user.valid?
-    session[:id] = new_user.id
+    session[:id] = @user.id
     redirect '/decks'
   else
     erb :create_user

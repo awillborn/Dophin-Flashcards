@@ -220,3 +220,15 @@ ul li a:visited {
   text-align: center;
   background-color: rgb(250, 149, 149);
 }
+
+.Gir_cage {
+  margin: auto;
+  width: 350px;
+}
+
+.GIR {
+  border: 1px solid black;
+  display: block;
+  position: absolute;
+  margin: 150px 35px 50px 0px;
+}
