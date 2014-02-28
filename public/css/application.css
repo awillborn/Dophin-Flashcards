@@ -122,7 +122,8 @@ form {
 
 ul {
   list-style: none;
-  margin: 30px 10px auto;
+  margin: 5% auto;
+
 
 }
 
@@ -152,8 +153,6 @@ ul li a:visited {
   margin: 0 auto;
   text-align: center;
   width: 80%;
-/*  position: absolute;
-  left: 150px;*/
 }
 
 .card h2 {
@@ -223,12 +222,16 @@ ul li a:visited {
 
 .Gir_cage {
   margin: auto;
-  width: 350px;
+
+  height: 20%;
+  position: relative;
+  top: 60%;
+  width: 40%;
 }
 
 .GIR {
-  border: 1px solid black;
+  border: 10px solid #D9CDCD;
   display: block;
-  position: absolute;
-  margin: 150px 35px 50px 0px;
+  margin: auto;
+
 }

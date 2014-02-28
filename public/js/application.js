@@ -4,47 +4,49 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  Dophin.addGuessListener()
+  Dophin.addDeckListener()
 
-  $(".choose-deck").on("click",function(event){
-    event.preventDefault();
-    var selectedDeck = $(this);
-    var deckId = selectedDeck.data('id');
-    console.log(deckId);
-    $.ajax({
-      type: "GET",
-      url: "/decks/"+deckId,
-      success: function(response){
-        $('.container').html(response)
-        console.log("win")
-      }
-    })
-  })
 
+});
+
+
+var Dophin = {
+
+  addGuessListener: function(){
     $(document).on("submit","form",function(event){
       event.preventDefault();
-      $.ajax({
-        type: "POST",
-        url: this.attributes.action.nodeValue,
-        data: $('form').serialize(),
-        success: function(response){
-          $('.container').html(response)
-          console.log(response)
-        }
-      })
-  });
-})
+      Dophin.cardGuess(this);
+    });
+  },
 
-// debugger;
-//     event.preventDefault();
-//     var selectedDeck = $(this);
-//     var deckId = selectedDeck.data('id');
-//     console.log(deckId);
-//     $.ajax({
-//       type: "POST",
-//       url: "/decks/1/cards/1",
-//       success: function(response){
-//         // $('.container').html(response)
-//         console.log(response)
-//       }
-//     })
-//   })
+  addDeckListener: function(){
+    $(".choose-deck").on("click",function(event){
+      event.preventDefault();
+      console.log(this)
+      Dophin.deckChoice(this);
+    })
+  },
+
+  deckChoice: function(){
+    $.ajax({
+      type: "GET",
+      url: this.deckChoice.arguments[0].attributes.href.nodeValue,
+      success: function(response){
+        $('.container').html(response)
+      }
+    })
+  },
+
+  cardGuess: function(){
+    // debugger
+    $.ajax({
+      type: "POST",
+      url: this.cardGuess.arguments[0].attributes.action.nodeValue,
+      data: $('form').serialize(),
+      success: function(response){
+        $('.container').html(response)
+      }
+    })
+  }
+}
